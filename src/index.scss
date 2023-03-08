@@ -1,0 +1,43 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+
+*,*::before,*::after {
+  box-sizing: border-box;
+}
+
+html,body,h1,h2,h3,h4,h5,h6,div,p,ul,ol,li,nav,section,article,header,footer,main,aside,label,form,input,button {
+  margin: 0;
+  padding: 0;
+}
+
+body,input,button,img {
+  border: none;
+}
+
+body {
+  min-width: 320px;
+  font: {
+    family: 'Noto Sans KR', sans-serif;
+    size: 16px;
+    weight: 400;
+  }
+  color: #565973;
+  background-color: #fff;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  background: none; 
+  cursor: pointer;
+}
+
+ul,ol,li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
