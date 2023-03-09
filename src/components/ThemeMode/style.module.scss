@@ -1,8 +1,9 @@
+@charset "utf-8";
 @import '/src/utils';
 
 .toggle-switch {
-  margin-right: 3rem;
-  
+  margin-right: 2.4rem;
+
   label {
     display: flex;
     align-items: center;
@@ -19,7 +20,8 @@
       overflow: hidden;
       cursor: pointer;
 
-      &::before, &::after {
+      &::before,
+      &::after {
         content: '';
         position: absolute;
         top: 50%;
@@ -32,8 +34,9 @@
 
       &::before {
         left: 3px;
-        background-color: #fff;     
+        background-color: #fff;
       }
+
       &:checked::before {
         left: 2.7rem;
       }
@@ -44,6 +47,7 @@
         opacity: 0;
         visibility: hidden;
       }
+
       &:checked::after {
         left: 1.9rem;
         opacity: 1;
@@ -53,6 +57,10 @@
 
     span {
       font-weight: 600;
+
+      @include small {
+        display: none;
+      }
     }
   }
 }

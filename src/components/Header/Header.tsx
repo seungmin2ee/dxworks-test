@@ -4,9 +4,26 @@ import logo from "../../assets/images/logo.svg";
 import landings from "../../assets/images/landings.jpg";
 import ThemeMode from "../ThemeMode/ThemeMode";
 import { menu1, menu2, menu3 } from "./menuLists";
+import { useState } from "react";
+import CloseButton from "../CloseButton/CloseButton";
 
 const Header = () => {
   const cx = classNames.bind(styles);
+  const [isShow, setIsShow] = useState<number | null>(null);
+  const [showMenu, setShowMenu] = useState(false);
+
+  const handleClick = (idx: number) => {
+    if (isShow === idx) setIsShow(null);
+    else setIsShow(idx);
+  };
+
+  const handleShow = () => {
+    setShowMenu(true);
+  };
+
+  const handleClose = () => {
+    setShowMenu(false);
+  };
 
   return (
     <header>
@@ -17,12 +34,19 @@ const Header = () => {
             Silicon
           </a>
         </h1>
-        <nav>
+        <nav className={cx(showMenu && "show-menu")}>
           <div className={cx("menu-container")}>
-            <div className={cx("menu-header")}>Menu</div>
+            <div className={cx("menu-header")}>
+              <b>Menu</b>
+              <CloseButton onClick={handleClose} />
+            </div>
             <ul className={cx("gnb")}>
-              <li className={cx("active")}>
-                Landings
+              <li
+                className={cx(isShow === 0 && "active")}
+                role="button"
+                onClick={() => handleClick(0)}
+              >
+                <span>Landings</span>
                 <div className={cx("dropdown-menu", "menu1")}>
                   <div>
                     <img src={landings} alt="메뉴 이미지" />
@@ -38,8 +62,12 @@ const Header = () => {
                   ))}
                 </div>
               </li>
-              <li>
-                Pages
+              <li
+                className={cx(isShow === 1 && "active")}
+                role="button"
+                onClick={() => handleClick(1)}
+              >
+                <span>Pages</span>
                 <div className={cx("dropdown-menu", "menu2")}>
                   {[0, 2, 4].map((el, idx) => (
                     <div key={idx}>
@@ -57,8 +85,12 @@ const Header = () => {
                   ))}
                 </div>
               </li>
-              <li>
-                Account
+              <li
+                className={cx(isShow === 2 && "active")}
+                role="button"
+                onClick={() => handleClick(2)}
+              >
+                <span>Account</span>
                 <div className={cx("dropdown-menu", "menu3")}>
                   <div>
                     <ul>
@@ -69,11 +101,18 @@ const Header = () => {
                   </div>
                 </div>
               </li>
-              <li>UI Kit</li>
-              <li>Docs</li>
+              <li>
+                <span>UI Kit</span>
+              </li>
+              <li>
+                <span>Docs</span>
+              </li>
             </ul>
             <div className={cx("menu-footer")}>
-              <button>Buy now</button>
+              <button>
+                <i className="bx bx-cart"></i>
+                Buy now
+              </button>
             </div>
           </div>
         </nav>
@@ -85,10 +124,11 @@ const Header = () => {
             <i className="bx bx-cart"></i>
             Buy now
           </button>
-          <button className={cx("menu-toggle")}>
-            <span>햄버거</span>
+          <button className={cx("mobile-menu")} onClick={handleShow}>
+            <span>모바일 메뉴</span>
           </button>
         </div>
+        {showMenu && <div className={cx("dim")}></div>}
       </div>
     </header>
   );

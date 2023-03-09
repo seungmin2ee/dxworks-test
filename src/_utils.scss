@@ -12,6 +12,50 @@ $deep-purple: #4044ee;
 
   position: absolute;
   top: 50%;
-  right: -5px;
   transform: translateY(-50%);
+}
+
+@mixin common-button {
+  width: 100%;
+  min-width: 12.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $purple;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.2s ease-in;
+
+  i {
+    font-size: 2rem;
+    padding-right: 5px;
+  }
+
+  &:hover {
+    background-color: $deep-purple;
+  }
+}
+
+$breakpoint-large: 991px;
+$breakpoint-regular: 767px;
+$breakpoint-small: 499px;
+
+@mixin large {
+  @media screen and (max-width: $breakpoint-large) {
+    @content;
+  }
+}
+
+@mixin regular {
+  @media screen and (max-width: $breakpoint-regular) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media screen and (max-width: $breakpoint-small) {
+    @content;
+  }
 }
