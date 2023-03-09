@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&display=swap');
 
 *,*::before,*::after {
   box-sizing: border-box;
@@ -14,14 +14,18 @@ body,input,button,img {
   border: none;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
-  min-width: 320px;
+  min-width: 32rem;
   font: {
-    family: 'Noto Sans KR', sans-serif;
-    size: 16px;
+    family: 'Manrope', sans-serif;
+    size: 1.6rem;
     weight: 400;
   }
-  color: #565973;
+  color: #33354d;
   background-color: #fff;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -30,6 +34,8 @@ body {
 }
 
 button {
+  color: inherit;
+  font-family: inherit;
   background: none; 
   cursor: pointer;
 }
@@ -39,5 +45,6 @@ ul,ol,li {
 }
 
 a {
+  color: inherit;
   text-decoration: none;
 }
