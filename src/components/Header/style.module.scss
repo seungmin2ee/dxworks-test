@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import '/src//utils';
+@import '/src/utils';
 
 header {
   display: flex;
@@ -39,128 +39,6 @@ header {
 
     nav {
       flex: 1;
-
-      .menu-container {
-
-        .menu-header,
-        .menu-footer {
-          display: none;
-        }
-
-        .gnb {
-          display: flex;
-
-          >li {
-            position: relative;
-            font-weight: 600;
-            padding: 1rem 1.6rem;
-            margin-right: 1.6rem;
-            transition: all 0.1s ease-in;
-            cursor: pointer;
-
-            &:first-child,
-            &:nth-child(2),
-            &:nth-child(3) {
-              >span {
-                position: relative;
-
-                &::after {
-                  @include web-icon('\ea4a', 1.8rem);
-                  margin-left: 5px;
-                }
-              }
-            }
-
-            &:first-child {
-              color: $purple;
-            }
-
-            &:hover,
-            &.active {
-              color: $purple;
-            }
-
-            @media screen and (min-width: ($breakpoint-large + 1px)) {
-              &:hover {
-                .dropdown-menu {
-                  opacity: 1;
-                  transform: scale(1);
-                  visibility: visible;
-                  transition: all 0.2s ease-in-out;
-                }
-              }
-            }
-
-            .dropdown-menu {
-              display: none;
-              position: absolute;
-              top: 4rem;
-              left: 0;
-              display: flex;
-              visibility: hidden;
-              flex-direction: row;
-              justify-content: space-between;
-              background-color: #fff;
-              color: #33354d;
-              overflow: hidden;
-              border-radius: 1rem;
-              box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-              transform: scale(0);
-              opacity: 0;
-
-              >div {
-                width: 23rem;
-                padding: 2rem;
-              }
-
-              ul>li {
-                font-size: 1.4rem;
-                font-weight: 500;
-                line-height: 2.5;
-                transition: all 0.1s ease-in;
-
-                &:hover {
-                  color: $purple;
-                }
-              }
-            }
-
-            .menu1 {
-              >div:first-child {
-                background-color: #f3f6ff;
-                padding: 1rem 0;
-
-                img {
-                  width: 100%;
-                  object-fit: cover;
-                }
-              }
-            }
-
-            .menu2 {
-              padding-left: 1rem;
-
-              >div {
-                ul {
-                  font-weight: 800;
-
-                  &:nth-child(2),
-                  &:nth-child(3) {
-                    margin-top: 2rem;
-                  }
-                }
-              }
-            }
-
-            .menu3 {
-              >div {
-                width: 20rem;
-                padding: 1rem 2rem;
-              }
-            }
-          }
-        }
-      }
     }
   }
 
@@ -170,7 +48,7 @@ header {
       padding: 1rem 2rem;
     }
 
-    .mobile-menu {
+    .sidemenu-btn {
       display: none;
     }
   }
@@ -183,103 +61,13 @@ header {
     .wrapper {
       nav {
         position: absolute;
-        right: -100%;
+        right: -120%;
         top: 0;
         z-index: 99;
         background-color: #fff;
-        visibility: hidden;
-        transition: all .3s ease-in-out;
-
-        .menu-container {
-          width: 33.6rem;
-          height: 100vh;
-          display: flex;
-          flex-direction: column;
-
-          .menu-header,
-          .menu-footer {
-            display: block;
-            padding: 1.8rem 2.4rem;
-          }
-
-          .menu-header {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid #e2e5f1;
-
-            >b {
-              font-weight: 800;
-              font-size: 2rem;
-              line-height: 1.6;
-            }
-          }
-
-          .gnb {
-            flex: 1;
-            flex-direction: column;
-            padding: 2.4rem;
-            overflow-y: auto;
-
-            >li {
-              margin: 0;
-              padding: 1rem 0;
-
-              &.active {
-                .dropdown-menu {
-                  display: flex;
-                }
-              }
-
-              .dropdown-menu {
-                display: none;
-                position: static;
-                flex-direction: column;
-                visibility: visible;
-                transform: scale(1);
-                opacity: 1;
-                box-shadow: none;
-                border-radius: 0;
-                margin-top: 1.5rem;
-
-                >div {
-                  width: 100%;
-                  border-left: 1px solid #e2e5f1;
-                  padding: 0 2rem;
-                }
-              }
-
-              .menu1>div:first-child {
-                border: none;
-              }
-
-              .menu2 {
-                padding: 0;
-
-                >div {
-                  padding-top: 2rem;
-
-                  &:first-child {
-                    padding-top: 1rem;
-                  }
-                }
-              }
-
-            }
-          }
-
-          .menu-footer {
-            border-top: 1px solid #e2e5f1;
-
-            >button {
-              @include common-button;
-              padding: 1rem 2.8rem;
-            }
-          }
-        }
-
+        transition: right 0.5s ease-in-out;
         &.show-menu {
           right: 0;
-          visibility: visible;
         }
       }
 
@@ -294,7 +82,7 @@ header {
           display: none;
         }
 
-        .mobile-menu {
+        .sidemenu-btn {
           display: flex;
           justify-content: center;
           align-items: center;
