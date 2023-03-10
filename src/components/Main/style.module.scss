@@ -1,0 +1,141 @@
+@charset "utf-8";
+@import '/src/utils';
+
+main {
+  width: 100%;
+
+  section {
+    padding: 0 4rem;
+    @include large {
+      padding: 0 1.8rem;
+    }
+  }
+
+  .intro {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background: url('../../assets/images/bg.jpeg') center / cover no-repeat;
+    overflow: hidden;
+
+    .intro-container {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      max-width: 132rem;
+
+      .intro-text {
+        width: 100%;
+        flex: 0 0 33.3%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 27rem;
+        padding: 0 1.2rem;
+
+
+        h2, p, .view-btn {
+          color: #fff;
+        }
+
+        h2 {
+          font-size: 6.4rem;
+          font-weight: 800;
+          @include large {
+            font-size: 5.6rem;
+          }
+        }
+
+        p {
+          margin: 2rem 0 6.5rem;
+          font-size: 2.4rem;
+          line-height: 1.6;
+          opacity: 0.7;
+          @include large {
+            font-size: 2rem;
+          }
+        }
+
+        img {
+          width: 22rem;
+        }
+
+        .view-btn {
+          display: flex;
+          align-items: center;
+          margin-top: 22rem;
+
+          span {
+            &:first-child {
+              position: relative;
+              display: block;
+              width: 4.5rem;
+              height: 4.5rem;
+              background-color: rgba(#fff, 0.05);
+              border-radius: 50%;
+              &::after {
+                @include web-icon('\ea4a', 1.8rem);
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+            }
+            &:last-child {
+              margin-left: 1.5rem;
+              font-size: 1.6rem;
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+
+      .intro-images {
+        flex-shrink: 0;
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        padding: 0 1.2rem;
+
+        img {
+          width: 48.6rem;
+        }
+      }
+    }
+  }
+}
+
+@include regular {
+  main {
+    .intro {
+      .intro-container {
+        justify-content: center;
+        align-items: center;
+
+        .intro-text {
+          flex-basis: auto;
+          align-items: center;
+
+          h2 {
+            font-size: 5rem;
+          }
+
+          p{
+            font-size: 2.2rem;
+            text-align: center;
+            br {
+              display: none;
+            }
+          }
+
+          .view-btn {
+            margin-top: 26rem;
+          }
+        }
+
+        .intro-images {
+          display: none;
+        }
+      }
+    }
+  }
+}
