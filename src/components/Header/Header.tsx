@@ -10,9 +10,15 @@ const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [clickedIndex, setClickedIndex] = useState<number | null>(null);
 
+  const handleShow = () => {
+    setShowMenu(true);
+    document.body.setAttribute("style", "overflow: hidden;");
+  };
+
   const handleClose = () => {
     setClickedIndex(null);
     setShowMenu(false);
+    document.body.setAttribute("style", "overflow: auto;");
   };
 
   return (
@@ -39,10 +45,7 @@ const Header = () => {
             <i className="bx bx-cart"></i>
             Buy now
           </button>
-          <button
-            className={cx("sidemenu-btn")}
-            onClick={() => setShowMenu(true)}
-          >
+          <button className={cx("sidemenu-btn")} onClick={handleShow}>
             <span>메뉴 열기</span>
           </button>
         </div>
