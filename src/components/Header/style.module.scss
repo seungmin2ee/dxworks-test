@@ -132,12 +132,12 @@ header {
 
 @include regular {
   header {
-    padding: 2.8rem;
+    padding: 0 2.8rem;
   }
 }
 
 @include small {
   header {
-    padding: 1.6rem;
+    padding: 0 1.6rem;
   }
 }

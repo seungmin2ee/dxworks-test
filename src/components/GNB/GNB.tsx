@@ -3,23 +3,20 @@ import classNames from "classnames/bind";
 import landings from "../../assets/images/landings.jpg";
 import { menu1, menu2, menu3 } from "./menuLists";
 import CloseButton from "../CloseButton/CloseButton";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 interface GNBProps {
-  setShowMenu: Dispatch<SetStateAction<boolean>>;
+  clickedIndex: number | null;
+  setClickedIndex: Dispatch<SetStateAction<number | null>>;
+  handleClose: () => void;
 }
 
-const GNB = ({ setShowMenu }: GNBProps) => {
+const GNB = ({ clickedIndex, setClickedIndex, handleClose }: GNBProps) => {
   const cx = classNames.bind(styles);
-  const [isShow, setIsShow] = useState<number | null>(null);
 
   const handleClick = (idx: number) => {
-    if (isShow === idx) setIsShow(null);
-    else setIsShow(idx);
-  };
-
-  const handleClose = () => {
-    setShowMenu(false);
+    if (clickedIndex === idx) setClickedIndex(null);
+    else setClickedIndex(idx);
   };
 
   return (
@@ -30,7 +27,7 @@ const GNB = ({ setShowMenu }: GNBProps) => {
       </div>
       <ul className={cx("gnb")}>
         <li
-          className={cx(isShow === 0 && "active")}
+          className={cx(clickedIndex === 0 && "active")}
           role="button"
           onClick={() => handleClick(0)}
         >
@@ -51,7 +48,7 @@ const GNB = ({ setShowMenu }: GNBProps) => {
           </div>
         </li>
         <li
-          className={cx(isShow === 1 && "active")}
+          className={cx(clickedIndex === 1 && "active")}
           role="button"
           onClick={() => handleClick(1)}
         >
@@ -74,7 +71,7 @@ const GNB = ({ setShowMenu }: GNBProps) => {
           </div>
         </li>
         <li
-          className={cx(isShow === 2 && "active")}
+          className={cx(clickedIndex === 2 && "active")}
           role="button"
           onClick={() => handleClick(2)}
         >
