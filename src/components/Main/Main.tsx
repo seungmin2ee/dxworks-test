@@ -5,9 +5,26 @@ import screens02 from "../../assets/images/screens02.png";
 import screens03 from "../../assets/images/screens03.png";
 import switcher from "../../assets/images/switcher.svg";
 import Slide from "../Slide/Slide";
+import { useEffect, useState } from "react";
+import landingsApi from "../../api/landingsApi";
+import LandingList from "../LandingList/LandingList";
+
+export interface Content {
+  title: string;
+  img: string;
+  url: string;
+  newFlag: boolean;
+}
 
 const Main = () => {
   const cx = classNames.bind(styles);
+  const [landings, setLandings] = useState<Content[]>([]);
+
+  useEffect(() => {
+    landingsApi()
+      .then((res) => setLandings(res.data.contents))
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <main>
@@ -38,7 +55,17 @@ const Main = () => {
           <Slide />
         </div>
       </section>
-      <section className={cx("landings")}></section>
+      <section className={cx("landings")}>
+        <div className={cx("container")}>
+          <h2>Landing Pages</h2>
+          <p>Choose from pre-built layouts of our unique landing pages</p>
+          <ul>
+            {landings.map((el, idx) => (
+              <LandingList key={idx} landing={el} />
+            ))}
+          </ul>
+        </div>
+      </section>
       <section className={cx("features")}></section>
     </main>
   );
