@@ -4,6 +4,7 @@ import screens01 from "../../assets/images/screens01.png";
 import screens02 from "../../assets/images/screens02.png";
 import screens03 from "../../assets/images/screens03.png";
 import switcher from "../../assets/images/switcher.svg";
+import Slide from "../Slide/Slide";
 
 const Main = () => {
   const cx = classNames.bind(styles);
@@ -11,7 +12,7 @@ const Main = () => {
   return (
     <main>
       <section className={cx("intro")}>
-        <div className={cx("intro-container")}>
+        <div className={cx("container")}>
           <div className={cx("intro-text")}>
             <h2>Silicon</h2>
             <p>
@@ -32,7 +33,11 @@ const Main = () => {
           </div>
         </div>
       </section>
-      <section className={cx("cards")}></section>
+      <section className={cx("cards")}>
+        <div className={cx("container")}>
+          <Slide />
+        </div>
+      </section>
       <section className={cx("landings")}></section>
       <section className={cx("features")}></section>
     </main>
