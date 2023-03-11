@@ -2,7 +2,7 @@ import styles from "./style.module.scss";
 import classNames from "classnames/bind";
 import logo from "../../assets/images/logo.svg";
 import ThemeMode from "../ThemeMode/ThemeMode";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import GNB from "../GNB/GNB";
 
 const Header = () => {
@@ -10,15 +10,27 @@ const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [clickedIndex, setClickedIndex] = useState<number | null>(null);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (showMenu) {
+        handleClose();
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [showMenu]);
+
   const handleShow = () => {
     setShowMenu(true);
-    document.body.setAttribute("style", "overflow: hidden;");
+    document.body.style.overflow = "hidden";
   };
 
   const handleClose = () => {
     setClickedIndex(null);
     setShowMenu(false);
-    document.body.setAttribute("style", "overflow: auto;");
+    document.body.style.overflow = "auto";
   };
 
   return (
