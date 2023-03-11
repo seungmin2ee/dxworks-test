@@ -2,98 +2,103 @@
 @import '/src/utils';
 
 footer {
-  max-width: 132rem;
   display: flex;
   justify-content: center;
-  margin: 0 auto;
   padding: 9.6rem 0 6.4rem;
   border-top: 1px solid #e2e5f1;
-
+  
   .container {
-    width: 50%;
+    width: 100%;
+    max-width: 132rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0 1.2rem;
+    
+    > div {
+      padding: 0 1.2rem;
+      width: 50%;
 
-    h2, p {
-      text-align: center;
-    }
-
-    h2 {
-      width: 100%;
-      margin-bottom: 3.2rem;
-      font-size: 4rem;
-      font-weight: 800;
-    }
-
-    form {
-      width: 100%;
-      display: flex;
+      h2, p {
+        text-align: center;
+      }
       
-      > div {
-        position: relative;
+      h2 {
         width: 100%;
-        margin-right: 1.6rem;
-
-        i {
-          position: absolute;
-          top: 50%;
-          z-index: 2;
-          transform: translateY(-50%);
-          margin-left: 1.5rem;
-          font-size: 2rem;
-          color: #9397ad;
-        }
-  
-        input {
+        margin-bottom: 3.2rem;
+        font-size: 4rem;
+        font-weight: 800;
+      }
+      
+      form {
+        width: 100%;
+        display: flex;
+        
+        > div {
+          position: relative;
           width: 100%;
-          line-height: 1.6;
-          padding: 1.25rem 1.8rem 1.25rem 4.8rem;
-          border: 1px solid #d4d7e5;
-          border-radius: 8px;
-          font-size: 1.6rem;
-          font-family: inherit;
-          color: #565973;
-          background-color: #fff;
-          outline: none;
-          transition: all 0.2s ease-in-out;
-          &::placeholder {
-            opacity: 0.5;
+          margin-right: 1.6rem;
+          
+          i {
+            position: absolute;
+            top: 50%;
+            z-index: 2;
+            transform: translateY(-50%);
+            margin-left: 1.5rem;
+            font-size: 2rem;
+            color: #9397ad;
           }
           
-          &:focus {
-            box-shadow: 0 5px 2rem rgba($purple, 0.15);
-            border-color: rgba($purple, 0.4);
+          input {
+            width: 100%;
+            line-height: 1.6;
+            padding: 1.25rem 1.8rem 1.25rem 4.8rem;
+            border: 1px solid #d4d7e5;
+            border-radius: 8px;
+            font-size: 1.6rem;
+            font-family: inherit;
+            color: #565973;
+            background-color: #fff;
+            outline: none;
+            transition: all 0.2s ease-in-out;
+            &::placeholder {
+              opacity: 0.5;
+            }
+            
+            &:focus {
+              box-shadow: 0 5px 2rem rgba($purple, 0.15);
+              border-color: rgba($purple, 0.4);
+            }
+          }
+        }
+        
+        button {
+          padding: 1.25rem 3.2rem;
+          font-size: 1.6rem;
+          font-weight: 600;
+          color: #fff;
+          background-color: $purple;
+          border-radius: 8px;
+          box-shadow: 0 8px 1.5rem rgba($purple, 0.4);
+          transition: all 0.2s ease-in-out;
+          
+          &:hover {
+            background-color: $deep-purple;
+            box-shadow: none;
           }
         }
       }
-
-      button {
-        padding: 1.25rem 3.2rem;
-        font-size: 1.6rem;
-        font-weight: 600;
-        color: #fff;
-        background-color: $purple;
-        border-radius: 8px;
-        box-shadow: 0 8px 1.5rem rgba($purple, 0.4);
-        transition: all 0.2s ease-in-out;
-
-        &:hover {
-          background-color: $deep-purple;
-          box-shadow: none;
-        }
+      
+      p {
+        margin-top: 2.4rem;
+        line-height: 1.6;
+        color: #565973;
       }
-    }
-
-    p {
-      margin-top: 2.4rem;
-      line-height: 1.6;
-      color: #565973;
     }
     
     .copyright {
       display: flex;
+      justify-content: center;
       align-items: center;
       color: #9397ad;
       margin-top: 7.2rem;
@@ -118,12 +123,24 @@ footer {
   }
 }
 
+@media screen and (max-width: 1199px) {
+  footer {
+    .container > div {
+      width: 58%;
+
+      h2 {
+        font-size: 3.6rem;
+      }
+    }
+  }
+}
+
 @include large {
   footer {
     padding: 7.2rem 0 2.4rem;
 
-    .container {
-      width: 58%;
+    .container>div {
+      width: 75%;
 
       h2 {
         font-size: 3.6rem;
@@ -140,8 +157,8 @@ footer {
   footer {
     padding-top: 5.6rem;
 
-    .container {
-      width: 91.5%;
+    .container>div {
+      width: 92%;
 
       h2 {
         font-size: 3.4rem;
@@ -153,7 +170,7 @@ footer {
 
 @include small {
   footer {
-    .container {
+    .container>div {
       width: 100%;
 
       h2 {

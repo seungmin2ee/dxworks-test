@@ -12,18 +12,20 @@ const Footer = () => {
   return (
     <footer>
       <div className={cx("container")}>
-        <h2>Subscribe to Our Newsletter</h2>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <i className="bx bx-envelope"></i>
-            <input type="email" placeholder="Your email" />
-          </div>
-          <button type="submit">Subscribe*</button>
-        </form>
-        <p>
-          *Enjoy using Silicon Template and stay tuned for the latest updates
-          and news.
-        </p>
+        <div>
+          <h2>Subscribe to Our Newsletter</h2>
+          <form onSubmit={handleSubmit}>
+            <div>
+              <i className="bx bx-envelope"></i>
+              <input type="email" placeholder="Your email" />
+            </div>
+            <button type="submit">Subscribe*</button>
+          </form>
+          <p>
+            *Enjoy using Silicon Template and stay tuned for the latest updates
+            and news.
+          </p>
+        </div>
         <div className={cx("copyright")}>
           © All rights reserved. Made with
           <i className="bx bx-heart"></i>
