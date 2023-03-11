@@ -9,7 +9,6 @@ main {
     display: flex;
     justify-content: center;
     padding: 0 4rem;
-
     @include large {
       padding: 0 1.8rem;
     }
@@ -21,17 +20,14 @@ main {
 
       .section-title {
         text-align: center;
-        font-size: 4rem;
         font-weight: 800;
-
+        font-size: 4rem;
         @include large {
           font-size: 3.6rem;
         }
-
         @include regular {
           font-size: 3.4rem;
         }
-
         @include small {
           font-size: 3rem;
         }
@@ -58,15 +54,13 @@ main {
         margin-top: 27rem;
         padding: 0 1.2rem;
 
-
         h2, p, .view-btn {
           color: #fff;
         }
 
         h2 {
-          font-size: 6.4rem;
           font-weight: 800;
-
+          font-size: 6.4rem;
           @include large {
             font-size: 5.6rem;
           }
@@ -74,10 +68,9 @@ main {
 
         p {
           margin: 2rem 0 6.5rem;
-          font-size: 2.4rem;
           line-height: 1.6;
           opacity: 0.7;
-
+          font-size: 2.4rem;
           @include large {
             font-size: 2rem;
           }
@@ -135,11 +128,9 @@ main {
   .cards {
     width: 100%;
     margin: 9rem 0;
-
     @include large {
       margin: 7rem 0;
     }
-
     @include regular {
       margin: 5.6rem 0;
     }
@@ -194,7 +185,6 @@ main {
         }
       }
   
-
       ul {
         display: flex;
         flex-wrap: wrap;
@@ -203,8 +193,10 @@ main {
   }
 }
 
+/* breakpoint-regular */
 @include regular {
   main {
+    /* intro section  */
     .intro {
       .container {
         justify-content: center;

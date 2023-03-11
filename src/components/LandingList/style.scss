@@ -17,15 +17,6 @@
     color: $purple;
   }
 
-  @include large {
-    flex-basis: 50%;
-    margin-bottom: 2.4rem;
-  }
-
-  @include small {
-    flex-basis: 100%;
-  }
-
   .landing-img {
     width: 100%;
     border: 1px solid #e2e5f1;
@@ -34,14 +25,10 @@
   }
 
   .lading-title {
-    margin-top: 2.4rem;
     text-align: center;
     font-weight: 800;
     font-size: 2rem;
-
-    @include large {
-      margin: 2.4rem 0 1.6rem;
-    }
+    margin-top: 2.4rem;
   }
 
   .comingsoon-img {
@@ -61,5 +48,23 @@
       }
     }
   }
+}
 
+/* breakpoint-large */
+@include large {
+  .landing-list {
+    flex-basis: 50%;
+    margin-bottom: 2.4rem;
+
+    .lading-title {
+      margin: 2.4rem 0 1.6rem;
+    }
+  }
+}
+
+/* breakpoint-small */
+@include small {
+  .landing-list {
+    flex-basis: 100%;
+  }
 }

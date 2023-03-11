@@ -55,6 +55,7 @@ header {
   }
 }
 
+/* breakpoint-large */
 @include large {
   header {
     height: 6.8rem;
@@ -132,6 +133,7 @@ header {
   }
 }
 
+/* breakpoint-small */
 @include small {
   header {
     padding: 0 1.6rem;

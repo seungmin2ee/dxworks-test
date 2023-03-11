@@ -3,13 +3,11 @@ $deep-purple: #4044ee;
 
 @mixin web-icon($content, $size) {
   content: $content;
-
   font: {
     family: 'boxicons';
     size: $size;
     weight: 400;
   }
-
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
