@@ -1,9 +1,12 @@
 import classNames from "classnames/bind";
 import styles from "./style.module.scss";
+import "../LandingList/style.scss";
 import screens01 from "../../assets/images/screens01.png";
 import screens02 from "../../assets/images/screens02.png";
 import screens03 from "../../assets/images/screens03.png";
 import switcher from "../../assets/images/switcher.svg";
+import placeholder from "../../assets/images/placeholder.jpg";
+import wireframe from "../../assets/images/wireframe.svg";
 import Slide from "../Slide/Slide";
 import { useEffect, useState } from "react";
 import { LandingContent, getLandingData } from "../../api/landingApis";
@@ -56,6 +59,19 @@ const Main = () => {
             {landings.map((el, idx) => (
               <LandingList key={idx} landing={el} />
             ))}
+            <li className="landing-list cursor-wait">
+              <div className="comingsoon-img">
+                <img
+                  src={placeholder}
+                  alt="Coming Soon"
+                  className="landing-img"
+                />
+                <span className="wireframe-img">
+                  <img src={wireframe} alt="wireframe" />
+                </span>
+              </div>
+              <h3 className="lading-title">Coming Soon</h3>
+            </li>
           </ul>
         </div>
       </section>

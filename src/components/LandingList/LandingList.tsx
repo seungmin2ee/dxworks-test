@@ -1,5 +1,4 @@
-import classNames from "classnames/bind";
-import styles from "./style.module.scss";
+import "./style.scss";
 import { useEffect, useState } from "react";
 import { LandingContent, getLandingImage } from "../../api/landingApis";
 
@@ -8,7 +7,6 @@ interface LandingListProps {
 }
 
 const LandingList = ({ landing }: LandingListProps) => {
-  const cx = classNames.bind(styles);
   const { title, url, img } = landing;
   const [imgURL, setImgURL] = useState<string>("");
 
@@ -21,10 +19,10 @@ const LandingList = ({ landing }: LandingListProps) => {
   }, []);
 
   return (
-    <li className={cx("list")}>
+    <li className="landing-list list-hover">
       <a href={url}>
-        <img src={imgURL} alt={title} />
-        <h3>{title}</h3>
+        <img src={imgURL} alt={title} className="landing-img" />
+        <h3 className="lading-title">{title}</h3>
       </a>
     </li>
   );
