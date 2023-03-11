@@ -6,23 +6,16 @@ import screens03 from "../../assets/images/screens03.png";
 import switcher from "../../assets/images/switcher.svg";
 import Slide from "../Slide/Slide";
 import { useEffect, useState } from "react";
-import landingsApi from "../../api/landingsApi";
+import { LandingContent, getLandingData } from "../../api/landingApis";
 import LandingList from "../LandingList/LandingList";
-
-export interface Content {
-  title: string;
-  img: string;
-  url: string;
-  newFlag: boolean;
-}
 
 const Main = () => {
   const cx = classNames.bind(styles);
-  const [landings, setLandings] = useState<Content[]>([]);
+  const [landings, setLandings] = useState<LandingContent[]>([]);
 
   useEffect(() => {
-    landingsApi()
-      .then((res) => setLandings(res.data.contents))
+    getLandingData()
+      .then((res) => setLandings(res.contents))
       .catch((err) => console.log(err));
   }, []);
 

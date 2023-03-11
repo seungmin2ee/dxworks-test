@@ -1,11 +1,10 @@
 import classNames from "classnames/bind";
 import styles from "./style.module.scss";
 import { useEffect, useState } from "react";
-import { landingImgApi } from "../../api/landingsApi";
-import { Content } from "../Main/Main";
+import { LandingContent, getLandingImage } from "../../api/landingApis";
 
 interface LandingListProps {
-  landing: Content;
+  landing: LandingContent;
 }
 
 const LandingList = ({ landing }: LandingListProps) => {
@@ -14,9 +13,9 @@ const LandingList = ({ landing }: LandingListProps) => {
   const [imgURL, setImgURL] = useState<string>("");
 
   useEffect(() => {
-    landingImgApi(img)
+    getLandingImage(img)
       .then((res) => {
-        setImgURL(URL.createObjectURL(res.data));
+        setImgURL(URL.createObjectURL(res));
       })
       .catch((err) => console.log(err));
   }, []);
