@@ -1,14 +1,19 @@
 import classNames from "classnames/bind";
+import { FormEvent } from "react";
 import styles from "./style.module.scss";
 
 const Footer = () => {
   const cx = classNames.bind(styles);
 
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  };
+
   return (
     <footer>
       <div className={cx("container")}>
         <h2>Subscribe to Our Newsletter</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div>
             <i className="bx bx-envelope"></i>
             <input type="email" placeholder="Your email" />
