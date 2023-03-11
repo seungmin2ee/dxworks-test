@@ -3,6 +3,8 @@
 
 :global {
   .cards-slide {
+    width: 100%;
+    
     >div:last-child {
       bottom: -5px;
     }
@@ -36,7 +38,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding-top: 2.4rem;
+  padding: 2.4rem 1.5rem 0;
   margin: 0 8px;
   transition: all 0.2s ease-in-out;
 
