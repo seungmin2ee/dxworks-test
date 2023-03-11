@@ -1,13 +1,22 @@
 $purple: #6366f1;
 $deep-purple: #4044ee;
 
+@mixin gradient-color {
+  background: linear-gradient(to right, #6366f1, #8B5CF6, #D946EF);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+}
+
 @mixin web-icon($content, $size) {
   content: $content;
+
   font: {
     family: 'boxicons';
     size: $size;
     weight: 400;
   }
+
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
