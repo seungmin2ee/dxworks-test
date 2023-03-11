@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import { LandingContent, getLandingImage } from "../../api/landingApis";
 
 interface LandingListProps {
-  landing: LandingContent;
+  list: LandingContent;
 }
 
-const LandingList = ({ landing }: LandingListProps) => {
-  const { title, url, img } = landing;
+const LandingList = ({ list }: LandingListProps) => {
+  const { title, url, img } = list;
   const [imgURL, setImgURL] = useState<string>("");
 
   useEffect(() => {

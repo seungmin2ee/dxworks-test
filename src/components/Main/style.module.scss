@@ -9,6 +9,7 @@ main {
     display: flex;
     justify-content: center;
     padding: 0 4rem;
+
     @include large {
       padding: 0 1.8rem;
     }
@@ -17,6 +18,24 @@ main {
       width: 100%;
       max-width: 132rem;
       display: flex;
+
+      .section-title {
+        text-align: center;
+        font-size: 4rem;
+        font-weight: 800;
+
+        @include large {
+          font-size: 3.6rem;
+        }
+
+        @include regular {
+          font-size: 3.4rem;
+        }
+
+        @include small {
+          font-size: 3rem;
+        }
+      }
     }
   }
 
@@ -29,6 +48,7 @@ main {
 
     .container {
       height: 100%;
+
       .intro-text {
         width: 100%;
         flex: 0 0 33.3%;
@@ -46,6 +66,7 @@ main {
         h2 {
           font-size: 6.4rem;
           font-weight: 800;
+
           @include large {
             font-size: 5.6rem;
           }
@@ -56,6 +77,7 @@ main {
           font-size: 2.4rem;
           line-height: 1.6;
           opacity: 0.7;
+
           @include large {
             font-size: 2rem;
           }
@@ -78,12 +100,14 @@ main {
               height: 4.5rem;
               background-color: rgba(#fff, 0.05);
               border-radius: 50%;
+
               &::after {
                 @include web-icon('\ea4a', 1.8rem);
                 left: 50%;
                 transform: translate(-50%, -50%);
               }
             }
+
             &:last-child {
               margin-left: 1.5rem;
               font-size: 1.6rem;
@@ -111,9 +135,11 @@ main {
   .cards {
     width: 100%;
     margin: 9rem 0;
+
     @include large {
       margin: 7rem 0;
     }
+
     @include regular {
       margin: 5.6rem 0;
     }
@@ -124,26 +150,50 @@ main {
     .container {
       flex-direction: column;
 
-      h2, p {
+      h2 {
+        margin-bottom: 1.6rem;
+      }
+
+      p {
         margin-bottom: 4.8rem;
         text-align: center;
         font-size: 1.8rem;
       }
 
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  /* features section */
+  .features {
+    margin: 4.8rem 0;
+    @include large {
+      margin: 2.4rem 0;
+    }
+
+    .container {
+      flex-direction: column;
+      padding-bottom: 4.8rem;
+      @include large {
+        padding-bottom: 1.6rem;
+      }
+      @include regular {
+        padding-bottom: 0;
+      }
+
       h2 {
-        margin-bottom: 1.6rem;
-        font-size: 4rem;
-        font-weight: 800;
+        padding: 2.4rem 0 4rem;
         @include large {
-          font-size: 3.6rem;
+          padding: 1.6rem 0 2.4rem;
         }
         @include regular {
-          font-size: 3.4rem;
-        }
-        @include small {
-          font-size: 3rem;
+          padding: 4px 0 1.6rem;
         }
       }
+  
 
       ul {
         display: flex;
@@ -168,9 +218,10 @@ main {
             font-size: 5rem;
           }
 
-          p{
+          p {
             font-size: 2.2rem;
             text-align: center;
+
             br {
               display: none;
             }

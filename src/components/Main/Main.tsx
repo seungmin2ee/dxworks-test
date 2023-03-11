@@ -11,6 +11,8 @@ import Slide from "../Slide/Slide";
 import { useEffect, useState } from "react";
 import { LandingContent, getLandingData } from "../../api/landingApis";
 import LandingList from "../LandingList/LandingList";
+import FeatureList from "../FeatureList/FeatureList";
+import { featureLists } from "./featureLists";
 
 const Main = () => {
   const cx = classNames.bind(styles);
@@ -53,11 +55,11 @@ const Main = () => {
       </section>
       <section className={cx("landings")}>
         <div className={cx("container")}>
-          <h2>Landing Pages</h2>
+          <h2 className={cx("section-title")}>Landing Pages</h2>
           <p>Choose from pre-built layouts of our unique landing pages</p>
           <ul>
             {landings.map((el, idx) => (
-              <LandingList key={idx} landing={el} />
+              <LandingList key={idx} list={el} />
             ))}
             <li className="landing-list cursor-wait">
               <div className="comingsoon-img">
@@ -75,7 +77,16 @@ const Main = () => {
           </ul>
         </div>
       </section>
-      <section className={cx("features")}></section>
+      <section className={cx("features")}>
+        <div className={cx("container")}>
+          <h2 className={cx("section-title")}>More Silicon Features</h2>
+          <ul>
+            {featureLists.map((el, idx) => (
+              <FeatureList key={idx} list={el} />
+            ))}
+          </ul>
+        </div>
+      </section>
     </main>
   );
 };

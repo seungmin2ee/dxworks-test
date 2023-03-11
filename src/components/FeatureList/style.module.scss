@@ -1,0 +1,56 @@
+@charset "utf-8";
+@import '/src/utils';
+
+.list {
+  flex-basis: 25%;
+  margin-top: 2.4rem;
+  padding: 2.4rem 3.6rem;
+
+  @media screen and (max-width: 1199px) {
+    margin-top: 1.6rem;
+  }
+
+  @include large {
+    flex-basis: 33.3%;
+    margin-top: 8px;
+  }
+
+  @include regular {
+    flex-basis: 50%;
+  }
+
+  @include small {
+    flex-basis: 100%;
+  }
+
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    height: 6rem;
+    background-color: #f3f6ff;
+    border-radius: 1rem;
+
+    i {
+      font-size: 3.2rem;
+      background: linear-gradient(to right, #6366f1, #8B5CF6, #D946EF);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: rgba(0, 0, 0, 0);
+    }
+  };
+
+  h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #0b0f19;
+    margin: 2.4rem 0 1.6rem
+  };
+
+  p {
+    font-size: 1.4rem;
+    color: #565973;
+    line-height: 1.6;
+  }
+}
