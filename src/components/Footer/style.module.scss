@@ -97,16 +97,15 @@ footer {
     }
     
     .copyright {
-      display: flex;
-      justify-content: center;
-      align-items: center;
       color: #9397ad;
+      text-align: center;
       margin-top: 7.2rem;
       @media screen and (max-width: 1199px) {
         margin-top: 6.4rem;
       }
 
       i {
+        vertical-align: middle;
         margin: 0 8px;
         font-size: 1.8rem;
         @include gradient-color;
