@@ -1,5 +1,5 @@
 ## 프로젝트 실행 방법
-레포지토리를 클론 한 후, client 디렉토리에서
+레포지토리를 클론 한 후
 ```jsx
 npm install
 npm start
